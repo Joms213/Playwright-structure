@@ -1,7 +1,7 @@
 import pytest
 from playwright.sync_api import sync_playwright
 
-@pytest.mark.repeat(5)  # 🔁 Run this test 5 times
+@pytest.mark.repeat(5)  
 def test_docs_navigation():
     print("🔧 Starting Playwright test...")
 
