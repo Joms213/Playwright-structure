@@ -1,11 +1,13 @@
+import pytest
 from playwright.sync_api import sync_playwright
 
+@pytest.mark.repeat(5)  # 🔁 Run this test 5 times
 def test_docs_navigation():
     print("🔧 Starting Playwright test...")
 
     with sync_playwright() as playwright:
         print("🚀 Launching Chromium browser...")
-        browser = playwright.chromium.launch(headless=False, slow_mo=1000)
+        browser = playwright.chromium.launch(headless=True, slow_mo=1000)
 
         page = browser.new_page()
         print("🌐 Navigating to homepage...")
@@ -25,7 +27,3 @@ def test_docs_navigation():
         browser.close()
 
     print("🏁 Test completed.")
-
-# Run the test
-if __name__ == "__main__":
-    test_docs_navigation()
