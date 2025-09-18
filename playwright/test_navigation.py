@@ -7,6 +7,7 @@ def browser():
         browser = playwright.chromium.launch(headless=True)
         yield browser
         browser.close()
+@pytest.mark.repeat(3)  
 
 @pytest.mark.parametrize("link_name, expected_url_part", [
     ("Docs", "/docs"),
