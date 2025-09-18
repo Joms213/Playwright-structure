@@ -1,6 +1,0 @@
-# Ignore virtual environment
-playwright/
-__pycache__/
-*.pyc
-*.log
-*.html
