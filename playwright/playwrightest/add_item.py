@@ -6,7 +6,7 @@ def test_login(run_id):
     print(f"\n🧪 Running test {run_id}...")
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=500)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto("https://www.saucedemo.com/")
 
@@ -22,7 +22,7 @@ def test_login(run_id):
         except AssertionError:
             screenshot_path = f"screenshots/test_login_failed_{run_id}.png"
             page.screenshot(path=screenshot_path)
-            print(f"❌ Test {run_id} failed: Screenshot saved to {screenshot_path}")
+            print(f" Test {run_id} failed: Screenshot saved to {screenshot_path}")
             raise
 
         browser.close()

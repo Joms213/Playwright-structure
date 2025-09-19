@@ -6,11 +6,11 @@ def test_docs_navigation():
     print("🔧 Starting Playwright test...")
 
     with sync_playwright() as playwright:
-        print("🚀 Launching Chromium browser...")
-        browser = playwright.chromium.launch(headless=True, slow_mo=1000)
+        print(" Launching Chromium browser...")
+        browser = playwright.chromium.launch(headless=False)
 
         page = browser.new_page()
-        print("🌐 Navigating to homepage...")
+        print(" Navigating to homepage...")
         page.goto("https://playwright.dev/python")
 
         print("🖱️ Clicking 'Docs' link...")
@@ -21,9 +21,9 @@ def test_docs_navigation():
 
         # ✅ Assertion: Check if URL contains '/docs'
         assert "/docs" in page.url, f"Expected '/docs' in URL, but got: {page.url}"
-        print("✅ Navigation successful. Current URL:", page.url)
+        print(" Navigation successful. Current URL:", page.url)
 
-        print("🧹 Closing browser...")
+        print(" Closing browser...")
         browser.close()
 
-    print("🏁 Test completed.")
+    print(" Test completed.")

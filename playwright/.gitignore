@@ -1,0 +1,10 @@
+# Ignore virtual environment
+playwright/
+!playwright/playwrightest/
+!playwright/playwrightest/*.py
+__pycache__/
+screenshots/
+assets/
+*.pyc
+*.log
+*.html
