@@ -5,6 +5,7 @@ playwright/
 __pycache__/
 screenshots/
 assets/
+Lib/
 *.pyc
 *.log
 *.html
